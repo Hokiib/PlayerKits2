@@ -22,6 +22,7 @@ public class MainConfigManager {
     private boolean kitPreviewRequiresKitPermission;
     private boolean newKitDefaultSaveModeOriginal;
     private String firstJoinKit;
+    private String deluxeMenu;
     private String newKitDefaultInventory;
     private boolean isMySQL;
     private boolean updateNotify;
@@ -40,6 +41,7 @@ public class MainConfigManager {
         closeInventoryOnClaim = config.getBoolean("close_inventory_on_claim");
         kitPreviewRequiresKitPermission = config.getBoolean("kit_preview_requires_kit_permission");
         firstJoinKit = config.getString("first_join_kit");
+        deluxeMenu = config.getString("deluxe_menu");
         newKitDefaultInventory = config.getString("new_kit_default_inventory");
         isMySQL = config.getBoolean("mysql_database.enabled");
         updateNotify = config.getBoolean("update_notify");
@@ -111,5 +113,9 @@ public class MainConfigManager {
 
     public boolean isNewKitDefaultSaveModeOriginal() {
         return newKitDefaultSaveModeOriginal;
+    }
+
+    public String getDeluxeMenu() {
+        return this.deluxeMenu;
     }
 }

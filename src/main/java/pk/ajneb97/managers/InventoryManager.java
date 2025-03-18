@@ -83,6 +83,13 @@ public class InventoryManager {
     }
 
     public void openInventory(InventoryPlayer inventoryPlayer){
+        if(inventoryPlayer.getInventoryName().equals("main_inventory")) {
+            final String deluxeMenu = plugin.getConfigsManager().getMainConfigManager().getDeluxeMenu();
+            if (deluxeMenu != null && !deluxeMenu.isEmpty()) {
+                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), deluxeMenu.replace("%player%", inventoryPlayer.getPlayer().getName()));
+                return;
+            }
+        }
         KitInventory kitInventory = getInventory(inventoryPlayer.getInventoryName());
 
         String title = kitInventory.getTitle();

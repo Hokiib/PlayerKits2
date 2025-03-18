@@ -94,7 +94,7 @@ public class PlayerKits2 extends JavaPlugin {
     }
 
     public void registerCommands(){
-        this.getCommand("kit").setExecutor(new MainCommand(this));
+        this.getCommand("playerkits").setExecutor(new MainCommand(this));
     }
 
     public void registerEvents() {
